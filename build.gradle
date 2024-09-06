@@ -14,7 +14,7 @@ java {
 }
 
 bootJar {
-    mainClass.set('ru/bezborodov/dataanalysermicroservice/DataAnalyserMicroserviceApplication')
+    mainClass.set('ru.bezborodov.dataanalysermicroservice.DataAnalyserMicroserviceApplication')
 }
 
 configurations {
