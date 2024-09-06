@@ -29,8 +29,8 @@ repositories {
 
 ext {
     gsonVersion = '2.10.1'
-    lombokVersion = '1.18.26'
-    lombokProcessorVersion = '1.18.20'
+    lombokVersion = '1.18.34'
+    lombokProcessorVersion = '1.18.34'
     liquibaseVersion = '4.29.1'
 }
 
