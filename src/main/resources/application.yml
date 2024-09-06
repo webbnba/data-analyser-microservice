@@ -1,1 +1,28 @@
-spring.application.name=data-analyser-microservice
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: jdbc:postgresql://${HOST}/${POSTGRES_DB}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+  liquibase:
+    change-log: classpath:liquibase/db.changelog.yaml
+    enabled: true
+#    consumer:
+#      group-id: test
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring:
+#          json:
+#            trusted:
+#              packages: "*"
+server:
+  port: 8082
+
+topics: ${KAFKA_SUBSCRIBED_TOPICS}

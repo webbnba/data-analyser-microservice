@@ -1,0 +1,7 @@
+#Служит для автоматического обновления зависимостей в проекте
+version: 2
+updates:
+  - package-ecosystem: "gradle" # Используемый пакетный менеджер (в данном случае Gradle)
+    directory: "/" # Директория, где находятся файлы build.gradle и settings.gradle
+    schedule:
+      interval: "daily" # Частота обновлений (ежедневно)

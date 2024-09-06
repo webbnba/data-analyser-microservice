@@ -1,4 +1,8 @@
 package ru.bezborodov.dataanalysermicroservice.service;
 
-public class KafkaDataService {
+import ru.bezborodov.dataanalysermicroservice.model.Data;
+
+public interface KafkaDataService {
+
+    void handle(Data data);
 }

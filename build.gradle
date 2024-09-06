@@ -13,6 +13,10 @@ java {
     }
 }
 
+bootJar {
+    mainClass.set('ru/bezborodov/dataanalysermicroservice/DataAnalyserMicroserviceApplication')
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -23,11 +27,28 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    gsonVersion = '2.10.1'
+    lombokVersion = '1.18.26'
+    lombokProcessorVersion = '1.18.20'
+    liquibaseVersion = '4.29.1'
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.kafka:spring-kafka'
+    implementation 'io.projectreactor.kafka:reactor-kafka'
+    implementation "com.google.code.gson:gson:${gsonVersion}"
+    implementation "org.liquibase:liquibase-core:${liquibaseVersion}"
+
+    runtimeOnly 'org.postgresql:postgresql'
+
+    implementation "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokProcessorVersion}"
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
