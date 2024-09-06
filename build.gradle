@@ -31,7 +31,7 @@ ext {
     gsonVersion = '2.10.1'
     lombokVersion = '1.18.26'
     lombokProcessorVersion = '1.18.20'
-    liquibaseVersion = '4.29.1'
+    liquibaseVersion = '4.29.2'
 }
 
 dependencies {
